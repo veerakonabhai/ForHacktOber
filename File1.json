@@ -1,0 +1,89 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class LinkedList
+{		
+    LLNode head;
+    LLNode last;
+
+
+   
+
+ 
+class LLNode
+{
+  int data;
+  LLNode next;
+  LLNode(int d) {data = d; next = null; }
+}
+LLNode Scrambled(LLNode head)
+{
+
+    //Your code goes here
+
+}         
+
+         
+ 
+    void printList()
+    {
+        LLNode temp = head;
+        while (temp != null)
+        {
+           System.out.print(temp.data+" ");
+           temp = temp.next;
+        }  
+        System.out.println();
+    }
+    LLNode searchData(int key)
+    {
+      	LLNode temp = head;
+        while(temp!=null)
+        {
+            if(temp.data == key)
+                return temp;
+            temp = temp.next;
+        }
+        return null;
+    }
+	void insertInEnd(int new_data)
+    {
+        LLNode new_node = new LLNode(new_data);
+		if(last==null){
+			head = last= new_node;
+		}
+		else{
+			last.next= new_node;
+			last = new_node;
+		}
+    }
+}
+public class Main
+{
+    public static void main(String args[])
+    {
+		Scanner sc = new Scanner(System.in);
+        
+		int t = sc.nextInt();
+      	while(t--!=0){
+          int n = sc.nextInt();
+          LinkedList llist = new LinkedList();
+
+          while(n--!=0){
+              llist.insertInEnd(sc.nextInt());
+          }
+
+          
+             
+
+              head=llist.Scrambled(llist.head);
+         
+              llist.printList();
+          
+          
+        }
+    }
+} 
