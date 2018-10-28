@@ -1,0 +1,74 @@
+<readonly>
+#include <bits/stdc++.h>
+using namespace std;
+ 
+struct LLNode{
+  int data;
+  struct LLNode *next;
+};
+ 
+LLNode *createNode(int d){
+  LLNode *t = (LLNode*)malloc(sizeof(LLNode));
+  t->next=NULL;
+  t->data=d;
+  return t;
+}
+ 
+</readonly> 
+LLNode *Scrambled(LLNode *head)
+{
+    // Your Code Here
+	
+ 
+}
+ 
+ 
+<readonly> 
+LLNode *_last=NULL;
+LLNode *insertInEnd(LLNode *h, int x){
+  LLNode *n = createNode(x);
+  if(h==NULL){
+    return (_last=n);
+  }
+  _last->next = n;
+  _last = n;
+  return h;
+}
+void printList(LLNode *h){
+  while(h){
+    printf("%d ", h->data);
+    h = h->next;
+  }
+  printf("\n");
+}
+LLNode *searchData(LLNode *h, int key)
+{
+    while(h!=NULL)
+    {
+        if(h->data == key)
+            return h;
+        h = h->next;
+    }
+    return NULL;
+}
+int main()
+{
+  	int n, t, x;
+  	scanf("%d", &t);
+  	while(t--){
+      scanf("%d", &n);
+      LLNode *h = NULL;
+ 
+      while(n--){
+        scanf("%d", &x);
+        h = insertInEnd(h, x);
+      }
+ 
+        h= Scrambled(h);
+          printList(h);
+ 
+ 
+    }
+	return 0;
+}
+</readonly>
